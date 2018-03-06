@@ -7,27 +7,6 @@ var url = 'https://newsapi.org/v2/top-headlines?' +
 let articles;
 
 
-$(document).ready(loadNews);
-
-function loadNews(){
-    
-
-        $.ajax({
-                url: url
-            }).done(function(data) {
-                // When you tell jQuery to read a file via the ajax method
-                // it reads the contents, and then executes whatever function
-                // that you specify here in the done() method, and passes in
-                // the contents of the file as the first argument.
-                // console.log("Top News");
-                // console.log(data.articles);
-                articles = data.articles;
-                // console.log(articles);
-                // $('#news-print').html(articles[0].title);
-        });
-        
-}
-
 function useNews(callBackFunction){
 
     $.ajax({
