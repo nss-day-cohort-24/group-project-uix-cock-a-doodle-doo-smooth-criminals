@@ -1,5 +1,6 @@
-lib/
 .DS_Store
 .vscode/
 css/
 dist/
+lib/.sass-cache
+lib/node_modules
