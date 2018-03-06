@@ -1,0 +1,35 @@
+{
+  "name": "lib",
+  "version": "1.0.0",
+  "devDependencies": {
+    "browserify": "^15.2.0",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.2.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.1",
+    "matchdep": "^2.0.0"
+  },
+  "description": "NPM package for Doo",
+  "main": "../index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nss-day-cohort-24/group-project-uix-cock-a-doodle-doo-smooth-criminals"
+  },
+  "author": "Ben, Arthur, Jesie, Laura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nss-day-cohort-24/group-project-uix-cock-a-doodle-doo-smooth-criminals"
+  },
+  "homepage": "https://github.com/nss-day-cohort-24/group-project-uix-cock-a-doodle-doo-smooth-criminals#readme",
+  "dependencies": {
+    "@firebase/app": "^0.1.9",
+    "@firebase/database": "^0.1.10",
+    "firebase": "^3.6.9"
+  }
+}

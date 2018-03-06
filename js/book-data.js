@@ -4,9 +4,9 @@ let $ = require('jquery');
 
 // userBook input will grab their input using document.getElementById().value.... Then, encodeURI the user input, and pass it to the userInputTo 
 
-var userBookTitleSearch = ${"book-title"}.value;
-var userAuthorSearch = ${"author-name"}.value;
-var userPublishSearch = ${"publish-year"}.value;
+var userBookTitleSearch = $("#book-title").val();
+var userAuthorSearch = $("#author-name").val();
+var userPublishSearch = $("#publish-year").val();
 
 
 function userInputToURL (string) {
@@ -18,9 +18,9 @@ function grabBookData(userBookInput) {
    
 	return $.ajax({
 		url: `https://openlibrary.org/search.json?q=${userBookInput}`,
-		let pulledData = $.type(JSON.parse(json: string));
+
 	}).done(() => {
-		
+
 		return ;
    });
 }
