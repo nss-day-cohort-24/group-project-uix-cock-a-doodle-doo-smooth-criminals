@@ -29,9 +29,11 @@ function listNews(articles){
     console.log(articles);
     for(let i=0;i<9;i++){
         let currentNews = articles[i];
+        if(currentNews.urlToImage){
         $('#news-print').append(`<a href="${currentNews.url}"><img src="${currentNews.urlToImage}" style="width:100px;height:100px;"></a><br>`);
+        }
         $('#news-print').append(`<a href="${currentNews.url}">${currentNews.title}</a><br>`);
-        if (currentNews.hasOwnProperty("description")) {
+        if(currentNews.description){
             $('#news-print').append(currentNews.description);
             $('#news-print').append("<br>");
           }
