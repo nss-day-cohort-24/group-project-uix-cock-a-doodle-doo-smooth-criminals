@@ -7,4 +7,5 @@ if (currentuser === loggedin) {
 }
 else (currentuser === loggedOut) {
     $('#logout').attr('hidden', true);
+    $('#login').removeAttr('hidden', true);
 }
