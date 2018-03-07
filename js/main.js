@@ -39,12 +39,12 @@ $("#login").click(function() {
     .then((result) => {
       console.log("result from login", result.user.uid);
       user.setUser(result.user.uid);
+      DOMbuild.hideLogButtons(user.getUser());
       dbMaster();
-
-
-
     });
   });
+
+
 
 
 
@@ -52,9 +52,7 @@ $("#login").click(function() {
     let userObj = buildUserObj();
     db.addUser(userObj);
   }
-      DOMbuild.hideLogButtons(user.getUser());
-    });
-  });
+
 
 //LOG OUT BUTTON
 $("#logout").click(function() {
