@@ -1,6 +1,14 @@
 {
   "name": "lib",
   "version": "1.0.0",
+  "dependencies": {
+    "@firebase/app": "^0.1.9",
+    "@firebase/database": "^0.1.10",
+    "bootstrap": "^4.0.0",
+    "firebase": "^3.9.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  },
   "devDependencies": {
     "browserify": "^15.2.0",
     "grunt": "^1.0.1",
@@ -26,10 +34,5 @@
   "bugs": {
     "url": "https://github.com/nss-day-cohort-24/group-project-uix-cock-a-doodle-doo-smooth-criminals"
   },
-  "homepage": "https://github.com/nss-day-cohort-24/group-project-uix-cock-a-doodle-doo-smooth-criminals#readme",
-  "dependencies": {
-    "@firebase/app": "^0.1.9",
-    "@firebase/database": "^0.1.10",
-    "firebase": "^3.9.0"
-  }
+  "homepage": "https://github.com/nss-day-cohort-24/group-project-uix-cock-a-doodle-doo-smooth-criminals#readme"
 }
