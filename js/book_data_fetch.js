@@ -7,7 +7,7 @@ console.log("Books Data On Station");
 // userBook input will grab their input using document.getElementById().value.... Then, encodeURI the user input, and pass it to the userInputTo 
 
 
-
+let apiURL = `http://openlibrary.org/search.json?q=`;
 let bookSubmitButton = $("#form-submit");
 
 
@@ -24,8 +24,14 @@ let bookForm = $("book-form");
 
 titleField.focusout(function (event) {
 	console.log("focus out fired", titleInput.val());
-	// return titleField.val();
+	let uri = 
+	titleInput = titleField.val();
+	titleInput.encodeURI
+
+
 });
+
+
 
 authorField.focusout(function (event) {
 	console.log("authorField focus out", authorField.val()); 
