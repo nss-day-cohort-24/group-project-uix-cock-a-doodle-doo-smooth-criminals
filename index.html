@@ -5,38 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Doo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="lib/node_modules/bootstrap/scss/bootstrap-reboot.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="lib/node_modules/bootstrap/scss/bootstrap.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
 
 </head>
-<body>
+<body  class="container">
 
-<button id="login">login</button>
+    <header>
+        <section id="header__section header__section--dateTime"></section>
+        <section id="header__section header__section--profileLocation"></section>
+        <section id="header__section header__section--weather"></section>
+    </header>
 
-<div id="news-print"></div>
+    <main>
+        <section id="main__section main__section--News"></section>
+        <section id="main__section main__section--Meetups"></section>
+        <section id="main__section main__section--Books"></section>
+    </main>
 
--    <!-- -->
--	<form id="book-form">
--		<fieldset>
--			<legend>Enter your search values</legend>
--			Book Title <br>
--			<input type="text" id="book-title"> <br>
--			Author <br>
--			<input type="text" id="author-name"> <br>
--			Year Published <br>
--			<input type="text" id="publish-year"> <br>
- 
--			<!-- Jesie added this SIIICK button -->
--			<button id="form-submit" type="submit">Search</button>
--		
--		</fieldset>
--		
--	</form>
-    
-<!-- <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-    <script src="dist/app.js"></script> -->
+    <footer>
+        <section id="footer__section footer__section--copyrights"></section>
+        <section id="footer__section footer__section--APIs"></section>
+    </footer>
+
 </body>
 </html>
