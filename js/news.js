@@ -29,17 +29,17 @@ function listNews(articles){
     console.log(articles);
     for(let i=0;i<9;i++){
         let currentNews = articles[i];
+        if(currentNews.urlToImage){
         $('#news-print').append(`<a href="${currentNews.url}"><img src="${currentNews.urlToImage}" style="width:100px;height:100px;"></a><br>`);
-        $('#news-print').append(`<a href="${currentNews.url}">${currentNews.title}</a><br>`);
-        if (currentNews.hasOwnProperty("description")) {
-            $('#news-print').append(currentNews.description);
-            $('#news-print').append("<br>");
+        }
+        $('#news-print').append(`<a href="${currentNews.url}"><h3>${currentNews.title}<h3></a><br>`);
+        if(currentNews.description){
+            $('#news-print').append(`${currentNews.description}<br>`);
           }
 
-
-        $('#news-print').append(currentNews.source.name);
-        $('#news-print').append("<hr>");
-
+        if(currentNews.source.name){
+        $('#news-print').append(`<h6>${currentNews.source.name}<h6><hr>`);
+        }
 
     }
 }
