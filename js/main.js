@@ -1,5 +1,6 @@
 "use strict";
 let bootstrap = require("../lib/node_modules/bootstrap");
+
 let news = require("./news");
 let user = require("./user");
 let config = require("./fb-config");
