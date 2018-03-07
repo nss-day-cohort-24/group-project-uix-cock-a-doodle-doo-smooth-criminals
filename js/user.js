@@ -3,12 +3,14 @@
 var firebase = require("./fb-config"),
 	 provider = new firebase.auth.GoogleAuthProvider(),
 	 currentUser = null;
+	 let userName;
 
 //listen for changed state
 firebase.auth().onAuthStateChanged((user) => {
 	console.log("onAuthStateChanged", user);
 	if (user){
 		currentUser = user.uid;
+		userName = user.displayName;
 		console.log("current user Logged in?", currentUser);
 	}else {
 		currentUser = null;
@@ -28,9 +30,12 @@ function logOut(){
 function getUser(){
 	return currentUser;
 }
+function setUserName() {
+	return userName;
+}
 
 function setUser(val){
 	currentUser = val;
 }
 
-module.exports = {logInGoogle, logOut, getUser, setUser};
+module.exports = {logInGoogle, logOut, getUser, setUser, setUserName};
