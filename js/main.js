@@ -20,16 +20,22 @@ $("#login").click(function() {
     .then((result) => {
       console.log("result from login", result.user.uid);
       user.setUser(result.user.uid);
-
+      DOMbuild.hideLogButtons(user.getUser());
     });
   });
 
-
 //LOG OUT BUTTON
 $("#logout").click(function() {
+
     console.log('clicked logout');
+    
     user.logOut();
-});
+    DOMbuild.hideLogButtons(null);
+    //.then((user) => {
+    
+    //console.log("its da result", user.getUser());
+    
+    });
 
 
 
