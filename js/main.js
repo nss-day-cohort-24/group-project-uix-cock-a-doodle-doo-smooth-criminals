@@ -23,6 +23,15 @@ $("#login").click(function() {
   });
 
 
+
+$("#logout").click(function() {
+    console.log('clicked logout');
+    user.logOut();
+});
+
+
+
+
 console.log("hello world");
 
 
