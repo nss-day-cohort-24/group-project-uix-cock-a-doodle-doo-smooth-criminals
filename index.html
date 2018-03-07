@@ -11,7 +11,14 @@
 
 </head>
 <body  class="container-fluid">
-
+    <nav class="row">
+        <section class="col">LOGO</section>
+        <section class="col">
+            <button id="login">Login</button>
+            <button id="logout" hidden="true">Logout</button>
+            <button class="location--change">Change Location</button>
+        </section>
+    </nav>
     <header class="row">
         <section class="col header__section header__section--dateTime">
             <h2 id="time-current">1:55 PM</h2>
@@ -19,8 +26,10 @@
             <p id="date-current">March 5, 2018</p>
         </section>
         <section class="col header__section header__section--profileLocation">
-            <h1 id="user--name">Hi, Siri</h1>
+            <h1>Good morning!</h1>
+            <h1 id="user--name"><a id="login" href="#">User, Please Sign In</a></h1>
             <p id="user--location">Nashville, TN</p>
+            <button class="location--change">Change Location</button>
         </section>
         <section class="col header__section header__section--weather">
             <h2>Current Weather</h2>
@@ -29,31 +38,16 @@
         </section>
     </header>
 
-    <main class="row container">
+    <main class="container">
         <div id="section--Top" class="row">
-            <section id="news-print" class="col section--news"></section>
-            <section class="col section--meetups">Saved meetup stuff!</section>
-            <section class="col section--books">Saved books stuff!</section>
+            <section id="news-print-" class="col section--news">Read the top news!</section>
+            <section class="col section--meetups">Save your meetups!</section>
+            <section class="col section--books">Save your favorite books!</section>
         </div>
         <div id="section--Bottom" class="row">
-            <section class="col section--news">Add news here!</section>
-            <section class="col section--meetups">Upcoming meetups here!</section>
-            <section id="search--books" class="col section--books">
-                	<form id="book-form">
-                            <fieldset>
-                                <legend>Enter your search values</legend>
-                                Book Title <br>
-                                <input type="text" id="book-title"> <br>
-                                Author <br>
-                                <input type="text" id="author-name"> <br>
-                                Year Published <br>
-                                <input type="text" id="publish-year"> <br>
-                     
-                                <!-- Jesie added this SIIICK button -->
-                                <button id="form-submit" type="submit">Search</button>
-                            
-                            </fieldset>
-            </section>
+            <section class="col section--news">Add your favoriate news here!</section>
+            <section class="col section--meetups">Learn about upcoming meetups here!</section>
+            <section id="search--books" class="col section--books">Search for a good book!</section>
         </div>
     </main>
 
