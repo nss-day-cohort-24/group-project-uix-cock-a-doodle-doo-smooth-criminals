@@ -5,7 +5,7 @@
     "@firebase/app": "^0.1.9",
     "@firebase/database": "^0.1.10",
     "bootstrap": "^4.0.0",
-    "firebase": "^3.9.0",
+    "firebase": "^3.6.9",
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9"
   },
