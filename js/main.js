@@ -11,7 +11,7 @@ require("firebase/database");
 
 let bookSearch = require("./book_data_fetch.js");
 
-
+//LOGIN BUTTON
 $("#login").click(function() {
     console.log("clicked auth");
     user.logInGoogle()
@@ -23,7 +23,7 @@ $("#login").click(function() {
   });
 
 
-
+//LOG OUT BUTTON
 $("#logout").click(function() {
     console.log('clicked logout');
     user.logOut();
