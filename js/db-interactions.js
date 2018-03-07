@@ -29,8 +29,9 @@ function addUser(userObj) {
    });
 }
 
-function checkUserExist(){
-    
-}
+// function checkUserExist(){
+//     currentUid = getUser();
+//     for (let i=0;i<)
+// }
 
 module.exports = {addUser};

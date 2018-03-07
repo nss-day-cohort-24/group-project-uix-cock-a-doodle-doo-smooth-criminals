@@ -18,6 +18,7 @@ function buildUserObj() {
     let userObj = {
     // We can use the same variable or reference that we use to display the name at the top of the page
     name: "",
+    location:"",
     uid: user.getUser()
   };
   console.log("userObj",userObj);
