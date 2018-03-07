@@ -16,7 +16,7 @@ $("#login").click(function() {
     user.logInGoogle()
     .then((result) => {
       console.log("result from login", result.user.uid);
-      user = result.user.uid;
+    //   user = result.user.uid;
       user.setUser(result.user.uid);
 
     });
