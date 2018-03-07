@@ -5,14 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Doo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../lib/node_modules/bootstrap/dist/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../lib/node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
 
 </head>
-<body>
+<body  class="container-fluid">
 
-<button id="login">login</button>
+    <header class="row">
+        <section class="col header__section header__section--dateTime">
+            <h2 id="time-current">1:55 PM</h2>
+            <p id="day-current">Wednesday</p>
+            <p id="date-current">March 5, 2018</p>
+        </section>
+        <section class="col header__section header__section--profileLocation">
+            <h1 id="user--name">Hi, Siri</h1>
+            <p id="user--location">Nashville, TN</p>
+        </section>
+        <section class="col header__section header__section--weather">
+            <h2>Current Weather</h2>
+            <p id="temp-current">62 / 42 F</p>
+            <p id="weather-current">Clear</p>
+        </section>
+    </header>
 
-<div id="news-print"></div>
+    <main class="row container">
+        <div id="section--Top" class="row">
+            <section id="news-print" class="col section--news"></section>
+            <section class="col section--meetups">Saved meetup stuff!</section>
+            <section class="col section--books">Saved books stuff!</section>
+        </div>
+        <div id="section--Bottom" class="row">
+            <section class="col section--news">Add news here!</section>
+            <section class="col section--meetups">Upcoming meetups here!</section>
+            <section id="search--books" class="col section--books">
+                	<form id="book-form">
+                            <fieldset>
+                                <legend>Enter your search values</legend>
+                                Book Title <br>
+                                <input type="text" id="book-title"> <br>
+                                Author <br>
+                                <input type="text" id="author-name"> <br>
+                                Year Published <br>
+                                <input type="text" id="publish-year"> <br>
+                     
+                                <!-- Jesie added this SIIICK button -->
+                                <button id="form-submit" type="submit">Search</button>
+                            
+                            </fieldset>
+            </section>
+        </div>
+    </main>
+
+    <footer class="row">
+        <section class="col footer__section footer__section--copyrights">APPNAME powered by The Smooth Criminals</section>
+        <section class="col footer__section footer__section--APIs">APIs: OpenLibrary.org, New API, OpenWeatherMap.org, Meetup.org</section>
+    </footer>
+
+        
+<script src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="dist/app.js"></script>
+
 
 -    <!-- -->
 -	<form id="book-form">
@@ -37,6 +90,7 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-    <script src="dist/app.js"></script>
+  <script src="dist/app.js"></script>
+  
 </body>
 </html>
