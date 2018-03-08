@@ -16,7 +16,7 @@ let firebase = require("./fb-config"),
 require("firebase/auth");
 require("firebase/database");
 
-let bookSearch = require("./book_data_fetch.js");
+let bookSearch = require("./book_data_fetch");
 
 
 // Preparing the object to be posted to firebase
@@ -79,7 +79,21 @@ $("#login").click(function() {
   });
 
 
+
 //LOG OUT BUTTON**********************
+
+
+
+  function dbMaster(){
+    let userObj = buildUserObj();
+    db.addUser(userObj);
+    let currentUid = user.getUser();
+    db.getUserData(currentUid);
+  }
+
+
+//LOG OUT BUTTON
+
 $("#logout").click(function() {
     //console.log('clicked logout');
     user.logOut();
