@@ -15,5 +15,22 @@ let hideLogButtons = (currentUser) => {
     console.log('hideLogButtons function ended');
 
 };
+// IF user is logged in, then display their username
+//If user is NOT logged in, then display a link "Please sign in"
 
-module.exports = {hideLogButtons};
+let setUsername = (currentUser, username) => {
+   console.log('setUsername function started');
+   let loggedOutUser = `<a class="login" href="#">Please sign in</a>`;
+   if (currentUser !== null) {
+       $('#user--name').html(username);
+   } else if (currentUser === null) {
+       $('#user--name').html(loggedOutUser);
+   }
+   console.log('setUsername function ended');
+};
+
+let cityLocation = (city) => {
+    $('#user--location').html(city);
+};
+
+module.exports = {hideLogButtons, setUsername, cityLocation};

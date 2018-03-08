@@ -3,7 +3,8 @@ let bootstrap = require("../lib/node_modules/bootstrap");
 
 let news = require("./news");
 let user = require("./user");
-let config = require("./fb-config");
+let config = require("./fb-config"),
+    weather = require("./weather");
 
 
 let db = require("./db-interactions");
@@ -40,6 +41,7 @@ $("#login").click(function() {
       console.log("result from login", result.user.uid);
       user.setUser(result.user.uid);
       DOMbuild.hideLogButtons(user.getUser());
+      changeLocation();
       dbMaster();
     });
   });
@@ -57,17 +59,29 @@ $("#login").click(function() {
 
 //LOG OUT BUTTON
 $("#logout").click(function() {
-
     console.log('clicked logout');
-    
     user.logOut();
     DOMbuild.hideLogButtons(null);
     //.then((user) => {
-    
     //console.log("its da result", user.getUser());
-    
-    });
+});
 
+//SET PRIMARY LOCATION
+let changeLocation = () => {
+$('.location--change').click(function(){
+    let zipCode = window.prompt('Your Zipcode Please');
+    weather.zipWeather(zipCode);
+    DOMbuild.cityLocation(weather.city());
+    console.log('city dom buid end');
+    });
+};
+
+// //ALERT TO PLEASE SIGN IN
+// let logoutAlert = () => {
+//     $('.location--change').click(function(){
+//         window.alert("Please Sign In:)");
+//     });
+// };
 
 
 
