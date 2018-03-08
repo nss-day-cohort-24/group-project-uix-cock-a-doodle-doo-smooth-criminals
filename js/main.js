@@ -11,7 +11,7 @@ let firebase = require("./fb-config"),
 require("firebase/auth");
 require("firebase/database");
 
-let bookSearch = require("./book_data_fetch.js");
+let bookSearch = require("./book_data_fetch");
 
 //LOGIN BUTTON
 $("#login").click(function() {
@@ -36,8 +36,6 @@ $("#logout").click(function() {
     //console.log("its da result", user.getUser());
     
     });
-
-
 
 
 console.log("hello world");
