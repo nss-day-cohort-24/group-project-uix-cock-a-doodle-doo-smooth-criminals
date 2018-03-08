@@ -33,4 +33,36 @@ let cityLocation = (city) => {
     $('#user--location').html(city);
 };
 
+
+//Jesie started here-------
+
+let formDOMString = ``;
+
+// $.holdReady(true);
+// this is the shorthand method of calling: $(document).ready(function(){})
+$(function() { 
+    
+    console.log( "ready!" );
+    
+    formDOMString =     //Store the html as a string...
+    `<form id="book-form">
+      <fieldset>
+         <legend>Enter your search values</legend>
+         Book Title <br>
+         <input type="text" id="book-title"> <br>
+         Author <br>
+         <input type="text" id="author-name"> <br>
+         Year Published <br>
+         <input type="text" id="publish-year"> <br>
+         
+         <button id="form-submit" type="submit">Search</button>
+          
+     </fieldset>
+          
+    </form>`;
+
+$(".container").append(formDOMString);
+
+}).then(booksInput.userInputToURL());
+
 module.exports = {hideLogButtons, setUsername, cityLocation};
