@@ -1,7 +1,7 @@
 'use strict';
 //IF THE USER IS LOGGED IN, HIDE THE LOG IN BUTTON
 //ELSE USER IS LOGGED OUT, HIDE LOG OUT BUTTON
-
+let booksInput = require("./book_data_fetch");
 
 let hideLogButtons = (currentUser) => {
     //console.log('hideLogButtons function started');
@@ -36,10 +36,10 @@ let cityLocation = (city) => {
 
 
 //Jesie started here-------
-let booksInput = require("./book_data_fetch");
+
 let formDOMString = ``;
 
-// $.holdReady(true);
+
 // this is the shorthand method of calling: $(document).ready(function(){})
 $(function() { 
     
