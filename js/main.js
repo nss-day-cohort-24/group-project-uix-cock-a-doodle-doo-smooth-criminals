@@ -67,10 +67,14 @@ $("#login").click(function() {
           for (let item in fbData){
               console.log('this is the second fbData',fbData);
               if (fbData[item].uid === userData.user.uid){
-                                
-              }
-          }
-      });
+                  
+            }
+        }
+    });
+    db.getUserWeather(userData.user.uid)
+    .then((userWetData) => {
+        console.log('weather data', userWetData);
+    });
       DOMbuild.setUsername(user.getUser(), userData.user.displayName);
       user.setUser(userData.user.uid);
       DOMbuild.hideLogButtons(user.getUser());

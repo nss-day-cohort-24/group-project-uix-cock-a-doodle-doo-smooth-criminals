@@ -21,8 +21,6 @@ function addUser(userObj) {
 }
 
 
-
-
 //ADDS WEATHER TO FIREBASE
 function addWeather(weatherObj) {
 	//console.log("addWeather", weatherObj);
@@ -37,11 +35,11 @@ function addWeather(weatherObj) {
 }
 
 
-
+//PULLING USER WEATHER DATA FROM FIREBASE
 function getUserWeather(user) {
     //console.log("url", firebase.getFBsettings().databaseURL);
      return $.ajax({
-         url: `${firebase.getFBsettings().databaseURL}/users.json?orderBy="uid"&equalTo="${user}"`
+         url: `${firebase.getFBsettings().databaseURL}/weather.json?orderBy="uid"&equalTo="${user}"`
      }).done((weatherData) => {
          return weatherData;
     });
@@ -77,4 +75,4 @@ function checkUserExist(){
 
 
 
-module.exports = {addUser,getUserData, addWeather};
+module.exports = {addUser,getUserData, addWeather, getUserWeather};
