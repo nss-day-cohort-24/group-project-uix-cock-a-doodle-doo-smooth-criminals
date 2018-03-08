@@ -66,15 +66,18 @@ $("#login").click(function() {
           console.log('fire base data', fbData);
           for (let item in fbData){
               console.log('this is the second fbData',fbData);
-              if (fbData[item].uid === userData.user.uid){
+              if (fbData[item].uid == userData.user.uid){
                   console.log('found a match');
+              }else if(fbData[item].uid !== userData.user.uid){
+                  console.log("no match");
+                  dbMaster();
+
               }
           }
       });
       user.setUser(userData.user.uid);
       DOMbuild.hideLogButtons(user.getUser());
       changeLocation();
-      dbMaster();
     });
   });
 
@@ -87,8 +90,7 @@ $("#login").click(function() {
   function dbMaster(){
     let userObj = buildUserObj();
     db.addUser(userObj);
-    let currentUid = user.getUser();
-    db.getUserData(currentUid);
+    console.log("user added");
   }
 
 
