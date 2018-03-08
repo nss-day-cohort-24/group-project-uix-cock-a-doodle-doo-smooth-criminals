@@ -47,4 +47,4 @@ function listNews(articles){
 useNews(listNews);
 
 
-
+module.exports = {useNews,listNews};
