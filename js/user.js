@@ -33,7 +33,6 @@ function getUser(){
 function setUserName() {
 	return userName;
 }
-
 function setUser(val){
 	currentUser = val;
 }
