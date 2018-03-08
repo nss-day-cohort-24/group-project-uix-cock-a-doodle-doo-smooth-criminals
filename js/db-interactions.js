@@ -20,20 +20,23 @@ function addUser(userObj) {
    });
 }
 
-// function getUserData() {
-//     console.log("url", firebase.getFBsettings().databaseURL);
-//      return $.ajax({
-//          url: `${firebase.getFBsettings().databaseURL}/users.json?orderBy="uid"`
-//          // url: `https://musichistory-d16.firebaseio.com/songs.json?orderBy="uid"&equalTo="${user}"`
-//      }).done((userData) => {
-//          console.log("songData in promise", userData);
-//          return userData;
-//     });
-//  }
+function getUserData(user) {
+    console.log("url", firebase.getFBsettings().databaseURL);
+     return $.ajax({
+         url: `${firebase.getFBsettings().databaseURL}/users.json?orderBy="uid"&equalTo="${user}"`
+         // url: `https://musichistory-d16.firebaseio.com/songs.json?orderBy="uid"&equalTo="${user}"`
+     }).done((userData) => {
+         console.log("userData", userData);
+         console.log(userData);
+         return userData;
 
-// function checkUserExist(){
-//     currentUid = getUser();
-//     for (let i=0;i<)
-// }
+    });
+ }
 
-module.exports = {addUser};
+function checkUserExist(){
+    
+
+
+}
+
+module.exports = {addUser,getUserData};
