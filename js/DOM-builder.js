@@ -2,6 +2,7 @@
 //IF THE USER IS LOGGED IN, HIDE THE LOG IN BUTTON
 //ELSE USER IS LOGGED OUT, HIDE LOG OUT BUTTON
 
+
 let hideLogButtons = (currentUser) => {
     console.log('hideLogButtons function started');
     if (currentUser !== null) {
@@ -35,7 +36,7 @@ let cityLocation = (city) => {
 
 
 //Jesie started here-------
-
+let booksInput = require("./book_data_fetch");
 let formDOMString = ``;
 
 // $.holdReady(true);

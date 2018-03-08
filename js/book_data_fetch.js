@@ -12,7 +12,7 @@ let bookSubmitButton = $("#form-submit"); // The button to submit the form...
 let titleField = $("#book-title"); // The form field for the book title...
 let authorField = $("#author-name"); // The form field for the author name field...
 let yearPubField = $("#publish-year"); //The form field for the year published field...
-// let bookForm = $("book-form"); // The entire field element...
+
 
 
 function userInputToURL(element, apiURL) {
@@ -26,7 +26,6 @@ function userInputToURL(element, apiURL) {
     // let encodedURL = apiURL.encodeURI(apiURL);
     // console.log("what is encoded url", encodedURL);
     // console.log("here is your encoded url brah", apiURL);
-
 }
 
 

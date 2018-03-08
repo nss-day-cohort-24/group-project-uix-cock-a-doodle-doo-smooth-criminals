@@ -16,7 +16,7 @@ let firebase = require("./fb-config"),
 require("firebase/auth");
 require("firebase/database");
 
-let bookSearch = require("./book_data_fetch.js");
+let bookSearch = require("./book_data_fetch");
 
 
 // Preparing the object to be posted to firebase
