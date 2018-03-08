@@ -16,4 +16,38 @@ let hideLogButtons = (currentUser) => {
 
 };
 
+
+//Jesie started here-------
+
+
+
+
+// this is the shorthand method of calling: $(document).ready(function(){})
+$(function() { 
+    
+    console.log( "ready!" );
+    
+    let formDOMString =     //Store the html as a string...
+    `<form id="book-form">
+      <fieldset>
+         <legend>Enter your search values</legend>
+         Book Title <br>
+         <input type="text" id="book-title"> <br>
+         Author <br>
+         <input type="text" id="author-name"> <br>
+         Year Published <br>
+         <input type="text" id="publish-year"> <br>
+         <!-- Jesie added this SIIICK button -->
+         <button id="form-submit" type="submit">Search</button>
+          
+     </fieldset>
+          
+    </form>`;
+
+$(".container").append(formDOMString);
+
+}).then(userInputToURL(formDOMString));
+
+
+//---------Jesie ended here
 module.exports = {hideLogButtons};
