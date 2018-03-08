@@ -3,9 +3,9 @@
 
     let firebase = require("./fb-config"),
     user = require("./user");
+    let userIDs = [];
 
-
-
+    let userID;
 
 
 function addUser(userObj) {
@@ -16,6 +16,8 @@ function addUser(userObj) {
       data: JSON.stringify(userObj),
       dataType: 'json'
    }).done((userID) => {
+       console.log("this is the userID",userID);
+       userIDs.push(userID);
       return userID;
    });
 }
@@ -27,14 +29,16 @@ function getUserData(user) {
          // url: `https://musichistory-d16.firebaseio.com/songs.json?orderBy="uid"&equalTo="${user}"`
      }).done((userData) => {
          console.log("userData", userData);
-         console.log(userData);
+         console.log("array of userIDs",userIDs);
+         let currentUserId = userIDs[0];
+         console.log("piece of data",userData.currentUserId);
          return userData;
 
     });
  }
 
 function checkUserExist(){
-    
+
 
 
 }
