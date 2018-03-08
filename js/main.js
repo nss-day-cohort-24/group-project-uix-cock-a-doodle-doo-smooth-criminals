@@ -51,6 +51,7 @@ $("#login").click(function() {
   function dbMaster(){
     let userObj = buildUserObj();
     db.addUser(userObj);
+    db.getUserData();
   }
 
 

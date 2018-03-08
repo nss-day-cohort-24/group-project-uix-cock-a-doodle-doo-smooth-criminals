@@ -7,16 +7,7 @@
 
 
 
-// function addUser(currentUser){
-// 	console.log("addUser", currentUser);
-// 	return $.ajax({
-//       url: `${firebase.getFBsettings().databaseURL}/users.json`,
-//       type: 'POST',
-//       data: JSON.stringify(currentUser),
-//       dataType: 'json'
-//    });
-// }
-// This is to add the uid and name to the firebase
+
 function addUser(userObj) {
 	console.log("addUser", userObj);
 	return $.ajax({
@@ -29,9 +20,20 @@ function addUser(userObj) {
    });
 }
 
+function getUserData() {
+    console.log("url", firebase.getFBsettings().databaseURL);
+     return $.ajax({
+         url: `${firebase.getFBsettings().databaseURL}/users.json?orderBy="uid"`
+         // url: `https://musichistory-d16.firebaseio.com/songs.json?orderBy="uid"&equalTo="${user}"`
+     }).done((userData) => {
+         console.log("songData in promise", userData);
+         return userData;
+    });
+ }
+
 // function checkUserExist(){
 //     currentUid = getUser();
 //     for (let i=0;i<)
 // }
 
-module.exports = {addUser};
+module.exports = {addUser,getUserData};
