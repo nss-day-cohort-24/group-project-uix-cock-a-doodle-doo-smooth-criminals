@@ -34,7 +34,7 @@ function getUserData(user) {
  }
 
 function checkUserExist(){
-    let currentUid = user.getUser();
+    
 
 
 }
