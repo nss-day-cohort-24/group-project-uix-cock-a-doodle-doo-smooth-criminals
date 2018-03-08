@@ -63,3 +63,5 @@ function grabBookData(userBookInput) {
         return;
     });
 }
+
+module.exports = { userInputToURL };
