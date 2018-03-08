@@ -16,22 +16,22 @@ let yearPubField = $("#publish-year"); //The form field for the year published f
 
 
 function userInputToURL(element, apiURL) {
-    // $.holdReady(false);
+    $.holdReady(false);
     console.log(titleField.val());
     let titleQuery = titleField.val();
     console.log("here is your title query brah", titleQuery);
 
-    // apiURL = `http://openlibrary.org/search.json?q=${titleQuery}`;
+    apiURL = `http://openlibrary.org/search.json?q=${titleQuery}`;
 
-    // let encodedURL = apiURL.encodeURI(apiURL);
-    // console.log("what is encoded url", encodedURL);
-    // console.log("here is your encoded url brah", apiURL);
+    let encodedURL = apiURL.encodeURI(apiURL);
+    console.log("what is encoded url", encodedURL);
+    console.log("here is your encoded url brah", apiURL);
 }
 
 
 titleField.focusout(function(e) {
-    
-console.log(titleField.val());
+    console.log(titleField.val());
+
     let titleQuery = titleField.val();
     console.log("here is your title query brah", titleQuery);
 
