@@ -19,14 +19,14 @@ function useNews(callBackFunction){
         // it reads the contents, and then executes whatever function
         // that you specify here in the done() method, and passes in
         // the contents of the file as the first argument.
-        console.log("Top News");
+        //console.log("Top News");
         articles = data.articles;
         callBackFunction(articles);
 });
 }
 
 function listNews(articles){
-    console.log(articles);
+    //console.log(articles);
     for(let i=0;i<9;i++){
         let currentNews = articles[i];
         if(currentNews.urlToImage){
