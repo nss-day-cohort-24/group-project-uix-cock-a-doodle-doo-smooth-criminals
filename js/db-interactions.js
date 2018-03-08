@@ -28,6 +28,13 @@ function getUserData() {
      }).done((userData) => {
          console.log("userData", userData);
         var userArray = Object.keys(userData);
+        userArray.forEach((key) => {
+            
+            let currentUid = userData.key.uid;
+
+            console.log("this is the key",currentUid);
+          });
+
          console.log("piece of data",userArray);
          return userData;
 
