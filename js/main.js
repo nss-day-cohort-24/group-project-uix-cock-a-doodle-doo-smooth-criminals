@@ -51,6 +51,17 @@ let buildWeatherObj = (a, b) => {
     return WeatherObj;
 };
 
+function buildNewsObj() {
+    let newsObj = {
+    // We can use the same variable or reference that we use to display the name at the top of the page
+    name: "",
+    location:"37212",
+    uid: user.getUser()
+  };
+  //console.log("userObj",userObj);
+//   return userObj;
+  
+}
 
 
 
