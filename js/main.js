@@ -62,15 +62,16 @@ $("#login").click(function() {
     .then((userData) => {
       db.getUserData(userData.user.uid)
       .then((fbData) => {
-          console.log('user id', userData.user.uid);
+          console.log('user id', userData.user);
           console.log('fire base data', fbData);
           for (let item in fbData){
               console.log('this is the second fbData',fbData);
               if (fbData[item].uid === userData.user.uid){
-                  console.log('found a match');
+                                
               }
           }
       });
+      DOMbuild.setUsername(user.getUser(), userData.user.displayName);
       user.setUser(userData.user.uid);
       DOMbuild.hideLogButtons(user.getUser());
       changeLocation();

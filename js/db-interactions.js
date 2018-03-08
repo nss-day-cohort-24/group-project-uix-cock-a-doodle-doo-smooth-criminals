@@ -20,6 +20,10 @@ function addUser(userObj) {
    });
 }
 
+
+
+
+//ADDS WEATHER TO FIREBASE
 function addWeather(weatherObj) {
 	//console.log("addWeather", weatherObj);
 	return $.ajax({
@@ -32,6 +36,25 @@ function addWeather(weatherObj) {
    });
 }
 
+
+
+function getUserWeather(user) {
+    //console.log("url", firebase.getFBsettings().databaseURL);
+     return $.ajax({
+         url: `${firebase.getFBsettings().databaseURL}/users.json?orderBy="uid"&equalTo="${user}"`
+     }).done((weatherData) => {
+         return weatherData;
+    });
+ }
+
+
+
+
+
+
+
+
+//PULLING USER DATA FORM FIREBASE
 function getUserData(user) {
     //console.log("url", firebase.getFBsettings().databaseURL);
      return $.ajax({
@@ -45,10 +68,13 @@ function getUserData(user) {
     });
  }
 
+ 
+
 function checkUserExist(){
-    
-
-
 }
+
+
+
+
 
 module.exports = {addUser,getUserData, addWeather};

@@ -64,6 +64,6 @@ $(function() {
 
 $(".container").append(formDOMString);
 
-}).then(booksInput.userInputToURL());
+});//.then(booksInput.userInputToURL());
 
 module.exports = {hideLogButtons, setUsername, cityLocation};
