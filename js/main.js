@@ -16,7 +16,7 @@ let firebase = require("./fb-config"),
 require("firebase/auth");
 require("firebase/database");
 
-let bookSearch = require("./book_data_fetch.js");
+let bookSearch = require("./book_data_fetch");
 
 
 // Preparing the object to be posted to firebase
@@ -27,19 +27,51 @@ function buildUserObj() {
     location:"37212",
     uid: user.getUser()
   };
-  console.log("userObj",userObj);
+  //console.log("userObj",userObj);
   return userObj;
   
 }
 
 
-//LOGIN BUTTON
+function dbMaster(){
+    let userObj = buildUserObj();
+    db.addUser(userObj);
+    let currentUid = user.getUser();
+    db.getUserData(currentUid);
+}
+
+
+
+let buildWeatherObj = (a, b) => {
+    let WeatherObj = {
+        city:a,
+        weather:b,
+        uid: user.getUser()
+    };
+    return WeatherObj;
+};
+
+
+
+
+
+//LOGIN BUTTON************************
 $("#login").click(function() {
     console.log("clicked auth");
     user.logInGoogle()
-    .then((result) => {
-      console.log("result from login", result.user.uid);
-      user.setUser(result.user.uid);
+    .then((userData) => {
+      db.getUserData(userData.user.uid)
+      .then((fbData) => {
+          console.log('user id', userData.user.uid);
+          console.log('fire base data', fbData);
+          for (let item in fbData){
+              console.log('this is the second fbData',fbData);
+              if (fbData[item].uid === userData.user.uid){
+                  console.log('found a match');
+              }
+          }
+      });
+      user.setUser(userData.user.uid);
       DOMbuild.hideLogButtons(user.getUser());
       changeLocation();
       dbMaster();
@@ -47,6 +79,8 @@ $("#login").click(function() {
   });
 
 
+
+//LOG OUT BUTTON**********************
 
 
 
@@ -59,33 +93,29 @@ $("#login").click(function() {
 
 
 //LOG OUT BUTTON
+
 $("#logout").click(function() {
-    console.log('clicked logout');
+    //console.log('clicked logout');
     user.logOut();
     DOMbuild.hideLogButtons(null);
-    //.then((user) => {
-    //console.log("its da result", user.getUser());
 });
 
 //SET PRIMARY LOCATION
 let changeLocation = () => {
 $('.location--change').click(function(){
     let zipCode = window.prompt('Your Zipcode Please');
-    weather.zipWeather(zipCode);
+    weather.zipWeather(zipCode)
+    .then((data) => {
+        let wetObj = buildWeatherObj(data.city.name, data.list[0].weather[0].main);
+        db.addWeather(wetObj);
+    });
     DOMbuild.cityLocation(weather.city());
-    console.log('city dom buid end');
     });
 };
 
-// //ALERT TO PLEASE SIGN IN
-// let logoutAlert = () => {
-//     $('.location--change').click(function(){
-//         window.alert("Please Sign In:)");
-//     });
-// };
 
 
 
-console.log("hello world");
+//console.log("hello world");
 
 
