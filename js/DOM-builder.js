@@ -22,7 +22,7 @@ let hideLogButtons = (currentUser) => {
 
 //Jesie started here-------
 
-let formDOMString;
+let formDOMString = ``;
 
 
 // this is the shorthand method of calling: $(document).ready(function(){})

@@ -5,7 +5,7 @@ console.log("Books Data On Station");
 
 // userBook input will grab their input using document.getElementById().value.... Then, encodeURI the user input, and pass it to the userInputTo 
 
-var apiURL;
+var apiURL = ``;
 
 
 let bookSubmitButton = $("#form-submit"); // The button to submit the form...
