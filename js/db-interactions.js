@@ -33,7 +33,6 @@ function addUser(userObj) {
    });
 }
 
-
 //ADDS WEATHER TO FIREBASE
 function addWeather(weatherObj) {
 	//console.log("addWeather", weatherObj);
@@ -72,7 +71,9 @@ function getUserData() {
          // url: `https://musichistory-d16.firebaseio.com/songs.json?orderBy="uid"&equalTo="${user}"`
      }).done((userData) => {
          console.log("userData", userData);
+
         checkUserExist(userData);
+
          return userData;
 
     });
@@ -104,5 +105,5 @@ function checkUserExist(userData){
 }
 
 
-
 module.exports = {addUser,getUserData, addWeather, getUserWeather, checkUserExist};
+

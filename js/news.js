@@ -28,7 +28,7 @@ function useNews(callBackFunction){
         // it reads the contents, and then executes whatever function
         // that you specify here in the done() method, and passes in
         // the contents of the file as the first argument.
-        //console.log("Top News");
+        console.log("Top News");
         articles = data.articles;
         callBackFunction(articles);
 });
@@ -38,6 +38,7 @@ function listNews(articles){
     //console.log(articles);
     $('#news-print-').html(`<h2>Your News</h2>`);
     for(let i=0;i<10;i++){
+
         let currentNews = articles[i];
         if(currentNews.urlToImage){
         $('#news-print-').append(`<br><a href="${currentNews.url}"><img src="${currentNews.urlToImage}" style="width:100px;height:100px;"></a><br>`);

@@ -41,10 +41,6 @@ let buildWeatherObj = (place, cast, high, low) => {
 };
 
 
-
-
-
-
 //LOGIN BUTTON************************
 $("#login").click(function() {
     console.log("clicked auth");
@@ -67,19 +63,19 @@ $("#login").click(function() {
 );
   });
 
-
 //LOG OUT BUTTON
-
 $("#logout").click(function() {
     console.log('clicked logout');
     user.logOut();
     DOMbuild.hideLogButtons(null);
+
 });
 
 //SET PRIMARY LOCATION
 let changeLocation = () => {
 $('.location--change').click(function(){
     let zipCode = window.prompt('Your Zipcode Please');
+
     weather.zipWeather(zipCode)
     .then((data) => {
         //console.log('data');
@@ -87,13 +83,6 @@ $('.location--change').click(function(){
         db.addWeather(wetObj);
         DOMbuild.weatherPrinter(data.city.name, data.list[0].weather[0].description, data.list[0].main.temp_max, data.list[0].main.temp_min);
     });
+
     });
 };
-
-
-
-
-//console.log("hello world");
-
-
-// module.exports = {buildUserObj};
