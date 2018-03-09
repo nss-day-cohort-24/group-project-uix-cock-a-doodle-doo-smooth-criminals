@@ -14,52 +14,23 @@ let authorField = $("#author-name"); // The form field for the author name field
 let yearPubField = $("#publish-year"); //The form field for the year published field...
 
 
-function userInputToURL(event, element) {
-    
-    // let titleQuery = titleField.val();
-    // console.log("BOOM", titleQuery);
-   
-    // let authorQuery = authorField.val();
-    // console.log("Goes", authorQuery);
-
-    // let yearQuery = yearPubField.val();
-    // console.log("The dynomiteeee!", yearQuery);
-
-    // URLQueryString = `http://openlibrary.org/search.json?q=${titleQuery}+${authorQuery}+${yearQuery}`;
-    // let encodedURLString = encodeURI(URLQueryString);
-    // console.log("what is encoded url", encodedURLString);
-}
-
-
 titleField.focusout(function (event) {
-
     let titleQuery = titleField.val();
     
     URLQueryString = `${titleQuery}`;
-    
 
 });
 
 authorField.focusout(function(event) {
-    if (authorField.val === null) { 
-        alert("Please Enter A Character");
-    } else {
-            
     let authorQuery = authorField.val();
-    
-    
-    URLQueryString += `${authorQuery}`;
-    
-}
+        
+    URLQueryString += `${authorQuery}`;    
 });
 
 yearPubField.focusout(function(event) {
-    
     let yearQuery = yearPubField.val();
-    
 
     URLQueryString += `${yearQuery}`;
-    
 
     encodedURLString = encodeURI(URLQueryString).toLowerCase();
     
@@ -67,27 +38,41 @@ yearPubField.focusout(function(event) {
     grabBookData(encodedURLString);
 });
 
-function displayBookResults (bookData) {
-    console.log("book results is here, check if this puppy works");
-}
-
-
-
 function grabBookData(string) {
 
     return $.ajax({
-        url: `https://openlibrary.org/search.json?q=${encodedURLString}`,
-
+        url: `https://openlibrary.org/search.json?q=${encodedURLString}&limit=10`,
+        type: "GET",
     }).done((bookData) => {
         console.log("Should be info about a book", bookData);
         displayBookResults(bookData);
     });
 }
+
+
+function displayBookResults (bookData) {
+    console.log("WHAT IS BOOK DATA", bookData);
+    // let bookSearchResultCards = `</section> id="book-card-flex-containter">
+    //     <div class="book-card">
+    //         <h6>${booktitle}</h6>
+    //         <img src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image"> <br>
+    //         <p class="book-card-author">${author}</p><br>
+    //         <p class="book-card-year-pub">${yearPub}</p>
+    //         <button class="save-book-button">Save To Your Collection</button>
+    //         <button class="delete-book-button">Remove Book From Collection</button>
+    //     </div>
+    // </section>`;
+    // console.log("book results is here, check if this puppy works");
+}
+
+
+
+
 console.log("WHAT IS MAH BOOK DATA!!", bookData);
 
 bookSubmitButton.click(function(event) {
     console.log("Click me again");
-    alert("Processing your request Mah Lord!");
+    displayBookResults(bookData);
 });
 
 
