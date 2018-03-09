@@ -66,4 +66,4 @@ let formDOMString = ``;
 
 // }).then(booksInput.userInputToURL());
 
-// module.exports = {hideLogButtons, setUsername, cityLocation};
+module.exports = {hideLogButtons, setUsername, cityLocation};
