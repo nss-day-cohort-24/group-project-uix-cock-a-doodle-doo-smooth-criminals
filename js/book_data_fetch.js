@@ -55,16 +55,28 @@ yearPubField.focusout(function(event) {
 function displayBookResults (bookData) {
     console.log("WHAT IS BOOK DATA INSIDE OF DISPLAY BOOK RESULTS FUNCTION", bookData);
    
-    // let bookSearchResultCards = `</section> id="book-card-flex-containter">
-    //     <div class="book-card">
-    //         <h6>${title}</h6>
-    //         <img src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image"> <br>
-    //         <p class="book-card-author">${author}</p><br>
-    //         <p class="book-card-year-pub">${yearPub}</p>
-    //         <button class="save-book-button">Save To Your Collection</button>
-    //         <button class="delete-book-button">Remove Book From Collection</button>
-    //     </div>
-    // </section>`;
+   for(let i = 0, length1 = bookData.length; i < length1; i++){
+    
+    let cardTitle = bookData[i].title_suggest;
+
+    let cardAuthor = bookData[i].author_name;
+
+    let cardPublishedYear = bookData[i].first_publish_year;
+
+    let bookSearchResultCards = `<section id="book-card-flex-containter">
+        <div class="book-card">
+            <h6>${cardTitle}</h6><br>
+            <p class="book-card-author">${cardAuthor}</p><br>
+            <p class="book-card-year-pub">${cardPublishedYear}</p>
+            <button class="save-book-button">Save To Your Collection</button>
+            <button class="delete-book-button">Remove Book From Collection</button>
+        </div>
+    </section>`;
+
+    $("#search--books").prepend(bookSearchResultCards);
+
+   }
+
 }
 
 

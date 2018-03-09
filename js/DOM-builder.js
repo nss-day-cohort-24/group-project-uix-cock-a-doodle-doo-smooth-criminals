@@ -21,12 +21,12 @@ let hideLogButtons = (currentUser) => {
 
 let setUsername = (currentUser, username) => {
    //console.log('setUsername function started');
-   let loggedOutUser = `<a class="login" href="#">Please sign in</a>`;
+//    let loggedOutUser = `<a class="login" href="#">Please sign in</a>`;
    if (currentUser !== null) {
        $('#user--name').html(username);
-   } else if (currentUser === null) {
-       $('#user--name').html(loggedOutUser);
-   }
+    } //else if (currentUser === null) {
+//        $('#user--name').html(loggedOutUser);
+//    }
    //console.log('setUsername function ended');
 };
 
@@ -35,4 +35,10 @@ let cityLocation = (city) => {
 };
 
 
-module.exports = {hideLogButtons, setUsername, cityLocation};
+let weatherPrinter = (city, weather, high, low) => {
+    $('#user--location').html(city);
+    $('#weather-current').html(weather);
+    $('#temp-current').html(`${high}F / ${low}F`);
+};
+
+module.exports = {hideLogButtons, setUsername, cityLocation, weatherPrinter};
