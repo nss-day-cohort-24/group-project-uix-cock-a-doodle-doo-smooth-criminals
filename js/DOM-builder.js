@@ -21,12 +21,12 @@ let hideLogButtons = (currentUser) => {
 
 let setUsername = (currentUser, username) => {
    //console.log('setUsername function started');
-   let loggedOutUser = `<a class="login" href="#">Please sign in</a>`;
+//    let loggedOutUser = `<a class="login" href="#">Please sign in</a>`;
    if (currentUser !== null) {
        $('#user--name').html(username);
-   } else if (currentUser === null) {
-       $('#user--name').html(loggedOutUser);
-   }
+    } //else if (currentUser === null) {
+//        $('#user--name').html(loggedOutUser);
+//    }
    //console.log('setUsername function ended');
 };
 

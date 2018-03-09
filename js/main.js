@@ -117,7 +117,7 @@ $('.location--change').click(function(){
     let zipCode = window.prompt('Your Zipcode Please');
     weather.zipWeather(zipCode)
     .then((data) => {
-        console.log('data');
+        //console.log('data');
         let wetObj = buildWeatherObj(data.city.name, data.list[0].weather[0].description, data.list[0].main.temp_max, data.list[0].main.temp_min);
         db.addWeather(wetObj);
         DOMbuild.weatherPrinter(data.city.name, data.list[0].weather[0].description, data.list[0].main.temp_max, data.list[0].main.temp_min);
