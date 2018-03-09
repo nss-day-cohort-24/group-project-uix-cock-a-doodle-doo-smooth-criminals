@@ -17,7 +17,7 @@ require("firebase/auth");
 require("firebase/database");
 
 let bookSearch = require("./book_data_fetch");
-
+console.log("hello world");
 
 // Preparing the object to be posted to firebase
 function buildUserObj() {
@@ -77,13 +77,7 @@ $("#login").click(function() {
           console.log('fire base data', fbData);
           for (let item in fbData){
               console.log('this is the second fbData',fbData);
-              if (fbData[item].uid == userData.user.uid){
-                  console.log('found a match');
-              }else if(fbData[item].uid !== userData.user.uid){
-                  console.log("no match");
-                  dbMaster();
-
-              }
+            dbMaster();
           }
       });
       user.setUser(userData.user.uid);
@@ -102,6 +96,7 @@ $("#login").click(function() {
     let userObj = buildUserObj();
     db.addUser(userObj);
     console.log("user added");
+    news.useNews(news.listNews);
   }
 
 

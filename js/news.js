@@ -30,21 +30,25 @@ function listNews(articles){
     for(let i=0;i<9;i++){
         let currentNews = articles[i];
         if(currentNews.urlToImage){
-        $('#news-print').append(`<a href="${currentNews.url}"><img src="${currentNews.urlToImage}" style="width:100px;height:100px;"></a><br>`);
+        $('#news-print-').append(`<a href="${currentNews.url}"><img src="${currentNews.urlToImage}" style="width:100px;height:100px;"></a><br>`);
         }
-        $('#news-print').append(`<a href="${currentNews.url}"><h3>${currentNews.title}<h3></a><br>`);
+        $('#news-print-').append(`<a href="${currentNews.url}"><h3>${currentNews.title}<h3></a><br>`);
         if(currentNews.description){
-            $('#news-print').append(`${currentNews.description}<br>`);
+            $('#news-print-').append(`${currentNews.description}<br>`);
           }
 
         if(currentNews.source.name){
-        $('#news-print').append(`<h6>${currentNews.source.name}<h6><hr>`);
+        $('#news-print-').append(`<h6>${currentNews.source.name}<h6><button id="button${i}">Save</button><hr>`);
         }
 
     }
 }
 
-useNews(listNews);
+// useNews(listNews);
+
+function getNewsTitle(articles){
+
+}
 
 
 module.exports = {useNews,listNews};
