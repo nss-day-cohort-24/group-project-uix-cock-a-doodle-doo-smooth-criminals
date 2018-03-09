@@ -48,16 +48,6 @@ $("#login").click(function() {
     console.log("clicked auth");
     user.logInGoogle()
     .then((userData) => {
-    //   db.getUserData(userData.user.uid)
-    //   .then((fbData) => {
-    //       console.log('the user id', userData.user.uid);
-    //       let currentUser = user.getUser();
-        //   for (let item in fbData){
-        //       console.log('this is the second fbData',fbData);
-
-        //   }
-    //   });
-    //   user.setUser(userData.user.uid);
       DOMbuild.hideLogButtons(user.getUser());
       changeLocation();
       dbMaster();
@@ -66,18 +56,10 @@ $("#login").click(function() {
   });
 
 
-
-//LOG OUT BUTTON**********************
-
-
-
-
-
-
 //LOG OUT BUTTON
 
 $("#logout").click(function() {
-    //console.log('clicked logout');
+    console.log('clicked logout');
     user.logOut();
     DOMbuild.hideLogButtons(null);
 });
