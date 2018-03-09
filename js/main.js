@@ -29,10 +29,12 @@ function dbMaster(){
 
 
 
-let buildWeatherObj = (a, b) => {
+let buildWeatherObj = (place, cast, high, low) => {
     let WeatherObj = {
-        city:a,
-        weather:b,
+        city:place,
+        weather:cast,
+        highTemp: high, 
+        lowTemp:low,
         uid: user.getUser()
     };
     return WeatherObj;
@@ -48,6 +50,16 @@ $("#login").click(function() {
     console.log("clicked auth");
     user.logInGoogle()
     .then((userData) => {
+    db.getUserWeather(userData.user.uid)
+    .then((userWetData) => {
+        //console.log('weather data', userWetData);
+        DOMbuild.weatherPrinter(userWetData[Object.keys(userWetData)[Object.keys(userWetData).length - 1]].city,
+        userWetData[Object.keys(userWetData)[Object.keys(userWetData).length - 1]].weather,
+        userWetData[Object.keys(userWetData)[Object.keys(userWetData).length - 1]].highTemp, 
+        userWetData[Object.keys(userWetData)[Object.keys(userWetData).length - 1]].lowTemp);
+    });
+      DOMbuild.setUsername(user.getUser(), userData.user.displayName);
+      user.setUser(userData.user.uid);
       DOMbuild.hideLogButtons(user.getUser());
       changeLocation();
       dbMaster();
@@ -70,10 +82,11 @@ $('.location--change').click(function(){
     let zipCode = window.prompt('Your Zipcode Please');
     weather.zipWeather(zipCode)
     .then((data) => {
-        let wetObj = buildWeatherObj(data.city.name, data.list[0].weather[0].main);
+        //console.log('data');
+        let wetObj = buildWeatherObj(data.city.name, data.list[0].weather[0].description, data.list[0].main.temp_max, data.list[0].main.temp_min);
         db.addWeather(wetObj);
+        DOMbuild.weatherPrinter(data.city.name, data.list[0].weather[0].description, data.list[0].main.temp_max, data.list[0].main.temp_min);
     });
-    DOMbuild.cityLocation(weather.city());
     });
 };
 
