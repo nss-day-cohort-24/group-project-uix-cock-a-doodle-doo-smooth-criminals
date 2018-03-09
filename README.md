@@ -1,34 +1,26 @@
-# Cock-A-Doodle-Doo - Group Project
+# Cock-A-Doodle-Doo - SMOOTH CRIMINALS
 
 ## Summary
 
-Your group will create a Single Page Application that is essentially a dashboard for a user to use when they wake up in the morning to keep track of the weather, news, etc.
+Welcome to the project repo for the Smooth Criminals App, DashBored.
 
+## App Useage
 
-## Getting Started
-
-> **Pro Tip:** If you find yourself writing logic on the first day of the sprint, then you did not spend enough time planning, and gaining clarification on the acceptance criteria.
-
-1. Be sure to review your design requirements [here](https://sites.google.com/susanculkin.com/fewdd-b/design-subjects/week-10). 
-1. Review the [product owner's tickets](https://github.com/nashville-software-school/group-project-uix-cock-a-doodle-doo/issues).
-1. Create Firebase account for your team to use in this application.
-1. Be sure to set your Firebase rules for indexing.
-1. Make sure you spend time defining MVP and creating a plan to reach that goal.
-
-
+* Login to the app by cliking the login button at the top of the screen.
+* View your weather and meetups by location, save books and news articles to your profile.
+* Change your location to get weather and meetups by location.
 
 ## Technical Considerations
-* You will be getting data from different APIs.
-* User authentication using Firebase.
-* The application must have CRUD functionality with the Firebase database.
-* Consider encapsulating all Firebase calls into a single module.
-* Use SASS to control your color themes.
-* Incorporate a CSS grid framework
+* Queried data from different APIs.
+* Utilized user authentication using Firebase.
+* Used SASS to control color themes.
+* Incorporated a CSS grid framework
 
-## Technology Requirements
+## Technology Used
 * SASS 
 * Grunt (with JSHINT) 
 * Promises
 * Browserify
 * Grid framework of your choice
 * Firebase for data storage and retrieval
+
