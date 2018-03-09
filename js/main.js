@@ -64,10 +64,10 @@ $("#login").click(function() {
     .then((userData) => {
       db.getUserData(userData.user.uid)
       .then((fbData) => {
-          console.log('user id', userData.user);
-          console.log('fire base data', fbData);
+          //console.log('user id', userData.user);
+          //console.log('fire base data', fbData);
           for (let item in fbData){
-              console.log('this is the second fbData',fbData);
+              //console.log('this is the second fbData',fbData);
               if (fbData[item].uid === userData.user.uid){
                   
             }
@@ -75,7 +75,7 @@ $("#login").click(function() {
     });
     db.getUserWeather(userData.user.uid)
     .then((userWetData) => {
-        console.log('weather data', userWetData);
+        //console.log('weather data', userWetData);
         DOMbuild.weatherPrinter(userWetData[Object.keys(userWetData)[Object.keys(userWetData).length - 1]].city,
         userWetData[Object.keys(userWetData)[Object.keys(userWetData).length - 1]].weather,
         userWetData[Object.keys(userWetData)[Object.keys(userWetData).length - 1]].highTemp, 
