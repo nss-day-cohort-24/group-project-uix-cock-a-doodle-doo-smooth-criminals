@@ -3,9 +3,22 @@
 
     let firebase = require("./fb-config"),
     user = require("./user");
-
+    let userArray;
     let userID;
+    let news = require("./news");
 
+
+function buildUserObj() {
+    let userObj = {
+    // We can use the same variable or reference that we use to display the name at the top of the page
+    name: "",
+    location:"37212",
+    uid: user.getUser()
+    };
+    //console.log("userObj",userObj);
+    return userObj;
+    
+}
 
 function addUser(userObj) {
 	console.log("addUser", userObj);
@@ -15,7 +28,7 @@ function addUser(userObj) {
       data: JSON.stringify(userObj),
       dataType: 'json'
    }).done((userID) => {
-       console.log("this is the userID",userID);
+    //    console.log("this is the userID",userID);
       return userID;
    });
 }
@@ -27,16 +40,38 @@ function getUserData() {
          // url: `https://musichistory-d16.firebaseio.com/songs.json?orderBy="uid"&equalTo="${user}"`
      }).done((userData) => {
          console.log("userData", userData);
-         console.log("piece of data",userData);
+        checkUserExist(userData);
          return userData;
 
     });
  }
 
-function checkUserExist(){
+function checkUserExist(userData){
+    console.log("this is the userData",userData);
+    let userArray = (Object.values(userData));
+    console.log("user Array",userArray);
+    let uidArray = [];
+    for (let i=0;i<userArray.length;i++){
+        console.log("here");
+        let currentPush = userArray[i].uid;
+        console.log("current push",currentPush);
+        uidArray.push(currentPush);
+    }
+    console.log("uidArray",uidArray);
+    let currentUid = user.getUser();
+    console.log("uid",currentUid);
+    if(uidArray.includes(currentUid)){
+        console.log("already exists");
+        news.retrieveNews(currentUid);
+    }else{
+        console.log("this is a new user");
+        let userObj = buildUserObj();
+        addUser(userObj);
+
+    }
 
 
 
 }
 
-module.exports = {addUser,getUserData};
+module.exports = {addUser,getUserData,checkUserExist};

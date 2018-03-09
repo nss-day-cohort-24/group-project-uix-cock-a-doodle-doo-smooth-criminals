@@ -19,25 +19,12 @@ require("firebase/database");
 let bookSearch = require("./book_data_fetch");
 console.log("hello world");
 
-// Preparing the object to be posted to firebase
-function buildUserObj() {
-    let userObj = {
-    // We can use the same variable or reference that we use to display the name at the top of the page
-    name: "",
-    location:"37212",
-    uid: user.getUser()
-  };
-  //console.log("userObj",userObj);
-  return userObj;
-  
-}
 
 
 function dbMaster(){
-    let userObj = buildUserObj();
-    db.addUser(userObj);
-    let currentUid = user.getUser();
-    db.getUserData(currentUid);
+    db.getUserData();
+    news.useNews(news.listNews);
+
 }
 
 
@@ -51,17 +38,7 @@ let buildWeatherObj = (a, b) => {
     return WeatherObj;
 };
 
-function buildNewsObj() {
-    let newsObj = {
-    // We can use the same variable or reference that we use to display the name at the top of the page
-    name: "",
-    location:"37212",
-    uid: user.getUser()
-  };
-  //console.log("userObj",userObj);
-//   return userObj;
-  
-}
+
 
 
 
@@ -71,19 +48,21 @@ $("#login").click(function() {
     console.log("clicked auth");
     user.logInGoogle()
     .then((userData) => {
-      db.getUserData(userData.user.uid)
-      .then((fbData) => {
-          console.log('user id', userData.user.uid);
-          console.log('fire base data', fbData);
-          for (let item in fbData){
-              console.log('this is the second fbData',fbData);
-            dbMaster();
-          }
-      });
-      user.setUser(userData.user.uid);
+    //   db.getUserData(userData.user.uid)
+    //   .then((fbData) => {
+    //       console.log('the user id', userData.user.uid);
+    //       let currentUser = user.getUser();
+        //   for (let item in fbData){
+        //       console.log('this is the second fbData',fbData);
+
+        //   }
+    //   });
+    //   user.setUser(userData.user.uid);
       DOMbuild.hideLogButtons(user.getUser());
       changeLocation();
-    });
+      dbMaster();
+    }
+);
   });
 
 
@@ -92,12 +71,7 @@ $("#login").click(function() {
 
 
 
-  function dbMaster(){
-    let userObj = buildUserObj();
-    db.addUser(userObj);
-    console.log("user added");
-    news.useNews(news.listNews);
-  }
+
 
 
 //LOG OUT BUTTON
@@ -127,3 +101,4 @@ $('.location--change').click(function(){
 //console.log("hello world");
 
 
+// module.exports = {buildUserObj};
